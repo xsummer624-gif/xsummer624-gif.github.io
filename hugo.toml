@@ -1,6 +1,6 @@
 baseURL = "https://xsummer624-gif.github.io/"
 languageCode = "zh-cn"
-title = "我的学习日志"
+title = "sunny"
 theme = "PaperMod"
 defaultContentLanguage = "zh"
 
@@ -40,8 +40,8 @@ defaultContentLanguage = "zh"
 
   # 首页个人介绍
   [params.homeInfoParams]
-    Title = "你好，我是夏梓淇 👋"
-    Content = "这里是我的学习日志，记录每天学到的新知识、踩过的坑和一些随手写的想法。"
+    Title = "你好"
+    Content = ""
 
   # 社交链接
   [[params.socialIcons]]
