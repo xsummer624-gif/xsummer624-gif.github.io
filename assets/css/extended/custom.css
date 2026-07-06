@@ -51,40 +51,83 @@
     }
 }
 
-/* 文章列表改成无框纯文字风格 */
-.post-entry,
-.first-entry {
+/* 文章列表：横线分隔，日期在左标题在右，标签在下 */
+.post-entry {
     background: transparent;
     border: none;
+    border-top: 1px solid var(--border);
     border-radius: 0;
-    padding: 12px 0;
-    margin-bottom: 4px;
+    padding: 16px 0;
+    margin: 0;
     position: relative;
+}
+
+.post-entry:last-of-type {
+    border-bottom: 1px solid var(--border);
 }
 
 .post-entry:hover {
     background: transparent;
 }
 
-.post-entry .entry-header h2 {
+.post-entry-row {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+}
+
+.post-entry-date {
+    color: var(--secondary);
+    font-size: 14px;
+    flex-shrink: 0;
+    width: 90px;
+    font-variant-numeric: tabular-nums;
+}
+
+.post-entry-title {
     font-size: 18px;
     font-weight: 400;
     margin: 0;
+    color: var(--primary);
 }
 
-.post-entry .entry-content {
-    display: none;
-}
-
-.post-entry .entry-footer {
-    margin-top: 4px;
+.post-entry-tags {
+    margin-top: 6px;
+    padding-left: 118px;
     font-size: 13px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.post-entry-tags a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.post-entry-tags a:hover {
+    color: var(--primary);
 }
 
 .post-entry .entry-link {
     position: absolute;
     inset: 0;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .post-entry-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .post-entry-date {
+        width: auto;
+    }
+
+    .post-entry-tags {
+        padding-left: 0;
+    }
 }
 
 /* 首页第一个介绍区域与普通文章之间稍微拉开一点 */
