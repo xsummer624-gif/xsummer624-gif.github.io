@@ -27,12 +27,12 @@ defaultContentLanguage = "zh"
 # PaperMod 主题参数
 [params]
   defaultTheme = "auto"
-  ShowReadingTime = true
+  ShowReadingTime = false
   ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
-  ShowWordCount = true
+  ShowWordCount = false
   ShowToc = true
   TocOpen = false
   disableThemeToggle = false
