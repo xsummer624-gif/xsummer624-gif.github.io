@@ -40,16 +40,10 @@ defaultContentLanguage = "zh"
 
   # 首页个人介绍
   [params.homeInfoParams]
-    Title = "你好"
+    Title = "Take me on"
     Content = ""
-
-  # 社交链接
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/xsummer624-gif"
-  [[params.socialIcons]]
-    name = "email"
-    url = "mailto:xsummer624@gmail.com"
+    Image = "/images/home-bg.jpg"
+    ImageAlt = "Home illustration"
 
   # 搜索功能
   [params.fuseOpts]

@@ -1,0 +1,95 @@
+/* 首页介绍区域：标题在左，图片在右 */
+.home-info-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.home-info-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.home-info-text .entry-header h1 {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.home-info-image {
+    flex: 0 0 45%;
+    max-width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-info-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .home-info-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .home-info-image {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .home-info-text .entry-header h1 {
+        font-size: 32px;
+    }
+}
+
+/* 文章列表改成无框纯文字风格 */
+.post-entry,
+.first-entry {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 12px 0;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.post-entry:hover {
+    background: transparent;
+}
+
+.post-entry .entry-header h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.post-entry .entry-content {
+    display: none;
+}
+
+.post-entry .entry-footer {
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.post-entry .entry-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* 首页第一个介绍区域与普通文章之间稍微拉开一点 */
+.home-info {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
