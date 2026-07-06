@@ -93,3 +93,10 @@
     padding-bottom: 24px;
     border-bottom: 1px solid var(--border);
 }
+
+/* 暗色模式：提亮文字，增强对比度和高级感 */
+:root[data-theme="dark"] {
+    --primary: rgb(245, 245, 245);
+    --secondary: rgb(170, 170, 170);
+    --content: rgb(230, 230, 230);
+}
