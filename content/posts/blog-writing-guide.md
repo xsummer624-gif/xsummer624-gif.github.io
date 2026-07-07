@@ -4,7 +4,7 @@ date = 2026-07-04
 draft = false
 tags = ["随笔"]
 categories = ["博客相关"]
-summary = "记录这个博客的 md 文件字段格式和作用，方便以后写文章时查阅。"
+summary = "记录这个博客的 md 文件字段格式和作用,方便以后写文章时查阅,"
 +++
 
 ## 这是什么
@@ -134,7 +134,7 @@ date = 2026-07-04
 draft = false
 tags = ["Python", "笔记"]
 categories = ["技术"]
-summary = "装饰器的基本用法、带参数装饰器、类装饰器。"
+summary = "装饰器的基本用法、带参数装饰器、类装饰器,"
 +++
 ```
 
@@ -146,7 +146,7 @@ title = "七月的第一天"
 date = 2026-07-01
 draft = false
 tags = ["随笔", "生活"]
-summary = "随便写写最近的感受。"
+summary = "随便写写最近的感受,"
 +++
 ```
 
