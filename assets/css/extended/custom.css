@@ -143,3 +143,135 @@
     --secondary: rgb(170, 170, 170);
     --content: rgb(230, 230, 230);
 }
+
+/* 代码输出折叠区域样式 */
+.post-content details {
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--code-bg);
+}
+
+.post-content details summary {
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: var(--secondary);
+    user-select: none;
+    list-style: none;
+    transition: color 0.2s;
+}
+
+.post-content details summary:hover {
+    color: var(--primary);
+}
+
+.post-content details summary::-webkit-details-marker {
+    display: none;
+}
+
+.post-content details[open] summary {
+    border-bottom: 1px solid var(--border);
+}
+
+.post-content details pre {
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 13px;
+    overflow-x: auto;
+    background: transparent;
+}
+
+/* ====== PyCharm Darcula 官方配色（来源：JetBrains IntelliJ Language Defaults） ====== */
+/* 背景 + 默认文字 */
+.chroma {
+    color: #a9b7c6;
+    background-color: #2b2b2b !important;
+    -webkit-text-size-adjust: none;
+}
+
+/* .k / .kn — 关键字（import / from / as / def / class / return） #CC7832 橙棕 */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt {
+    color: #cc7832;
+}
+
+/* .nn — 模块名（numpy / np / sklearn）→ 白色（用户要求包名正常色）*/
+.chroma .nn { color: #d4d4d4; }
+
+/* .nb — 内建函数（print / len / range）→ 紫色 */
+.chroma .nb,
+.chroma .bp { color: #c586c0; }
+
+/* .nf — 函数声明名（def filter_features）→ 白色（用户要求函数/方法正常色）*/
+.chroma .nf { color: #d4d4d4; }
+
+/* .nc — 类名（class VarianceThreshold）→ 白色 */
+.chroma .nc { color: #d4d4d4; }
+
+/* .nd — 装饰器（@staticmethod） #BBB529 黄绿 */
+.chroma .nd { color: #bbb529; }
+
+/* .n — 名称（变量名 + 函数调用 + 方法）→ 白色 */
+.chroma .n { color: #d4d4d4; }
+
+/* .n.call — JS 标记：函数调用（.n 后面紧跟括号）→ 白色 */
+.chroma .n.call { color: #d4d4d4; }
+
+/* .n.kwarg — JS 标记：关键字参数名（.n 后面紧跟 = ）→ 深橙红色（比 import 的 #CC7832 更深更红）*/
+.chroma .n.kwarg { color: #b5522a; }
+
+/* .nv / .vc / .vg / .vi / .vm — 变量（如果 Chroma 标了的话） #A9B7C6 默认色 */
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm { color: #a9b7c6; }
+
+/* 字符串系列 → 绿色 */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .s1,
+.chroma .ss { color: #98c379; }
+.chroma .se { color: #98c379; }
+.chroma .sr { color: #98c379; }
+
+/* 数字系列 → 亮蓝色（看得清）*/
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo { color: #61afef; }
+
+/* 注释系列 → 绿色斜体 #6a9955 */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+    color: #6a9955;
+    font-style: italic;
+}
+
+/* 操作符 + 标点 = 默认色 */
+.chroma .o,
+.chroma .ow,
+.chroma .or,
+.chroma .p { color: #a9b7c6; }

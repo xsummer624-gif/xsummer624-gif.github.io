@@ -11,7 +11,8 @@ defaultContentLanguage = "zh"
 # Markdown 渲染配置
 [markup]
   [markup.highlight]
-    style = "monokai"
+    style = "vim"
+    noClasses = false
     lineNos = false
     codeFences = true
     guessSyntax = true

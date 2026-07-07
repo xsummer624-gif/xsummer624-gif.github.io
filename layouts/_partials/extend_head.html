@@ -1,0 +1,13 @@
+{{- /* MathJax 数学公式渲染：仅对 front matter 中 math = true 的文章加载 */ -}}
+{{- if .Params.math -}}
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+{{- end -}}

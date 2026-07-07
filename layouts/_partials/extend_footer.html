@@ -1,0 +1,42 @@
+{{- /* 代码高亮增强：区分函数调用 / 关键字参数名（仅在括号内）*/ -}}
+{{- /* Chroma 把函数调用、变量名、参数名都归到 .n，JS 根据上下文区分 */ -}}
+<script>
+(function() {
+    function enhanceCodeBlocks() {
+        var codeBlocks = document.querySelectorAll('.chroma');
+        codeBlocks.forEach(function(block) {
+            var spans = block.querySelectorAll('span');
+            var parenDepth = 0;
+            spans.forEach(function(el) {
+                if (el.classList.contains('n') && !el.classList.contains('call') && !el.classList.contains('kwarg')) {
+                    var next = el.nextSibling;
+                    while (next && next.nodeType === 3 && next.textContent.trim() === '') {
+                        next = next.nextSibling;
+                    }
+                    if (next && next.nodeType === 1) {
+                        var nextText = next.textContent.trim();
+                        if (next.classList.contains('p') && nextText.charAt(0) === '(') {
+                            el.classList.add('call');
+                        } else if (next.classList.contains('o') && nextText === '=' && parenDepth > 0) {
+                            el.classList.add('kwarg');
+                        }
+                    }
+                }
+                if (el.classList.contains('p')) {
+                    var t = el.textContent;
+                    for (var i = 0; i < t.length; i++) {
+                        if (t[i] === '(') parenDepth++;
+                        else if (t[i] === ')') parenDepth--;
+                    }
+                }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enhanceCodeBlocks);
+    } else {
+        enhanceCodeBlocks();
+    }
+})();
+</script>
