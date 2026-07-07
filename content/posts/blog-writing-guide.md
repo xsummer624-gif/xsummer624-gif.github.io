@@ -2,7 +2,7 @@
 title = "博客文章编写指南"
 date = 2026-07-04
 draft = false
-tags = ["随笔", "博客"]
+tags = ["随笔"]
 categories = ["博客相关"]
 summary = "记录这个博客的 md 文件字段格式和作用，方便以后写文章时查阅。"
 +++

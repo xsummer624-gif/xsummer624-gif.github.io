@@ -2,7 +2,7 @@
 title = "低方差"
 date = 2026-07-07
 draft = false
-tags = ["机器学习", "特征工程", "特征选择"]
+tags = ["机器学习", "特征工程", "特征选择"，“笔记”]
 categories = ["机器学习"]
 math = true
 
