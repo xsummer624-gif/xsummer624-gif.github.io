@@ -1,4 +1,4 @@
-baseURL = "https://xsummer624-gif.github.io/"
+baseURL = "https://xsummer624.github.io/"
 languageCode = "zh-cn"
 title = "sunny"
 theme = "PaperMod"
@@ -58,7 +58,7 @@ defaultContentLanguage = "zh"
 
 # 编辑文章快捷链接
 [params.editPost]
-  URL = "https://github.com/xsummer624-gif/xsummer624-gif.github.io/tree/main/content"
+  URL = "https://github.com/xsummer624/xsummer624.github.io/tree/main/content"
   Text = "Suggest Changes"
   appendFilePath = true
 
