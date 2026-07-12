@@ -113,7 +113,7 @@ git commit -m "新增文章：标题"
 git push
 ```
 
-GitHub Actions 会自动构建并部署到 `https://xsummer624-gif.github.io/`。
+GitHub Actions 会自动构建并部署到 `https://xsummer624.github.io/`。
 
 ## 标点修复工具 (fix_frontmatter.py)
 

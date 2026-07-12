@@ -8,7 +8,7 @@ layout = "single"
 ## 联系方式
 
 - **Email**: [xsummer624@gmail.com](mailto:xsummer624@gmail.com)
-- **GitHub**: [@xsummer624-gif](https://github.com/xsummer624-gif)
+- **GitHub**: [@xsummer624](https://github.com/xsummer624)
 
 ## 关于这个博客
 
