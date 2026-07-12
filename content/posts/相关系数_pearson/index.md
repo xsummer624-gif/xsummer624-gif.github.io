@@ -104,6 +104,6 @@ sns.heatmap(corr_matrix,annot=True,fmt=".2f",cmap="coolwarm")
 
 
 
-![png](2_%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0_pearson_files/2_%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0_pearson_8_1.png)
+![png](images/2_%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0_pearson_8_1.png)
     
 

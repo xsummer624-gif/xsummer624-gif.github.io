@@ -66,7 +66,7 @@ plt.show()
 
 
 ​    
-![png](4_pca_files/4_pca_6_0.png)
+![png](images/4_pca_6_0.png)
 ​    
 
 

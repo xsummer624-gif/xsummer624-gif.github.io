@@ -2,7 +2,7 @@
 title = "拟合"
 date = 2026-07-07
 draft = false
-tags = ["机器学习", "特征工程", "笔记"]
+tags = ["机器学习", "模型评估", "笔记"]
 categories = ["机器学习"]
 math = true
 +++
@@ -85,6 +85,6 @@ plt.show()
 
 
 ​    
-![png](5_%E6%8B%9F%E5%90%88_files/5_%E6%8B%9F%E5%90%88_0_0.png)
+![png](images/5_%E6%8B%9F%E5%90%88_0_0.png)
 ​    
 

@@ -38,7 +38,8 @@ hugo server
 1. **nbconvert 转换**：.ipynb → .md + 图片文件夹
 2. **添加 front matter**：自动生成 TOML 格式头部（标题、日期、标签、`math = true`）
 3. **长输出折叠**：超过 15 行的代码输出自动折叠为可点击展开区域
-4. **创建 Page Bundle**：在 `content/posts/<标题>/` 下生成 `index.md` + 图片文件夹
+4. **创建 Page Bundle**：在 `content/posts/<标题>/` 下生成 `index.md`
+5. **图片统一存放**：图片复制到 `content/posts/<标题>/images/`，md 中的引用路径自动改写为 `images/xxx.png`
 
 ## 标题提取规则
 
@@ -54,7 +55,7 @@ hugo server
 
 ### 图片路径
 
-nbconvert 生成的图片会放在 `<文件名>_files/` 文件夹中，脚本会自动复制到 Page Bundle 目录内。md 中的引用路径 `![png](xxx_files/yyy.png)` 不需要手动修改，Hugo 会正确解析。
+nbconvert 生成的图片会放在 `<文件名>_files/` 文件夹中，脚本会自动复制到 Page Bundle 目录下的 `images/` 子目录，并改写 md 中的引用路径为 `images/xxx.png`。无需手动修改，Hugo 会正确解析。
 
 ### 数学公式
 
@@ -113,7 +114,7 @@ git commit -m "新增文章：标题"
 git push
 ```
 
-GitHub Actions 会自动构建并部署到 `https://xsummer624.github.io/`。
+GitHub Actions 会先跑 `fix_frontmatter.py --check` 校验 front matter，再自动构建并部署到 `https://xsummer624.github.io/`。如果校验未通过，CI 会失败并提示你本地修复。
 
 ## 标点修复工具 (fix_frontmatter.py)
 
@@ -122,7 +123,11 @@ GitHub Actions 会自动构建并部署到 `https://xsummer624.github.io/`。
 **用法：**
 
 ```bash
+# 修复模式：扫描并修改文件
 python tools/fix_frontmatter.py
+
+# 检查模式：只报告不修改，发现问题则退出码 1（CI 用这个）
+python tools/fix_frontmatter.py --check
 ```
 
 **功能：**
@@ -134,7 +139,7 @@ python tools/fix_frontmatter.py
 - 清理 front matter 内多余空行
 - 输出修复报告
 
-**建议：每次 push 前跑一遍，几秒钟搞定，不会再部署失败。**
+**建议：每次 push 前跑一遍修复模式，几秒钟搞定，不会再部署失败。CI 也会自动用检查模式兜底。**
 
 ## 常见问题
 

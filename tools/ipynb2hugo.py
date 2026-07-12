@@ -244,24 +244,26 @@ def main():
         front_matter = create_front_matter(title, tags, category)
         final_content = front_matter + content
 
+        # 复制图片文件夹（如果有）→ 统一命名为 images/
+        files_dir_name = Path(ipynb_path).stem + '_files'
+        files_dir_path = os.path.join(temp_dir, files_dir_name)
+        if os.path.exists(files_dir_path):
+            dest_files_dir = os.path.join(post_dir, 'images')
+            if os.path.exists(dest_files_dir):
+                shutil.rmtree(dest_files_dir)
+            shutil.copytree(files_dir_path, dest_files_dir)
+            img_count = sum(1 for f in os.listdir(dest_files_dir) if f.endswith(('.png', '.jpg', '.jpeg', '.svg')))
+            print(f"  已复制图片: images/ ({img_count} 张)")
+            # 更新 md 中的图片引用路径：<旧目录名>/ → images/
+            final_content = re.sub(r'!\[([^\]]*)\]\([^)]*_files/', r'!\1](images/', final_content)
+        else:
+            print(f"  无图片输出")
+
         # 写入 index.md
         index_path = os.path.join(post_dir, 'index.md')
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write(final_content)
         print(f"  已创建: content/posts/{title}/index.md")
-
-        # 复制图片文件夹（如果有）
-        files_dir_name = Path(ipynb_path).stem + '_files'
-        files_dir_path = os.path.join(temp_dir, files_dir_name)
-        if os.path.exists(files_dir_path):
-            dest_files_dir = os.path.join(post_dir, files_dir_name)
-            if os.path.exists(dest_files_dir):
-                shutil.rmtree(dest_files_dir)
-            shutil.copytree(files_dir_path, dest_files_dir)
-            img_count = sum(1 for f in os.listdir(dest_files_dir) if f.endswith(('.png', '.jpg', '.jpeg', '.svg')))
-            print(f"  已复制图片: {files_dir_name}/ ({img_count} 张)")
-        else:
-            print(f"  无图片输出")
 
         print(f"\n  完成!")
         print(f"  文章路径: content/posts/{title}/")
